@@ -1,0 +1,100 @@
+<!-- pages/volunteerGuide/volunteerGuide.wxml -->
+<view class="container">
+  <view class="card">
+    <text class="title">志愿者指南</text>
+    <view class="nav-bar">
+      <view 
+        class="nav-item {{currentTab == 'rules' ? 'active' : ''}}" 
+        bindtap="switchTab"
+        data-tab="rules"
+      >
+        服务规范
+      </view>
+      <view 
+        class="nav-item {{currentTab == 'emergency' ? 'active' : ''}}" 
+        bindtap="switchTab"
+        data-tab="emergency"
+      >
+        应急处理
+      </view>
+      <view 
+        class="nav-item {{currentTab == 'communication' ? 'active' : ''}}" 
+        bindtap="switchTab"
+        data-tab="communication"
+      >
+        沟通技巧
+      </view>
+    </view>
+  </view>
+
+  <view class="content-section">
+    <!-- 服务规范 -->
+    <view wx:if="{{currentTab == 'rules'}}" class="content-card">
+      <text class="subtitle">志愿者服务规范</text>
+      <view class="content-item">
+        <text class="content-title">1. 着装要求</text>
+        <text class="content-text">- 佩戴志愿者标识牌</text>
+        <text class="content-text">- 穿着整洁、得体的服装</text>
+        <text class="content-text">- 保持良好的个人卫生</text>
+      </view>
+      <view class="content-item">
+        <text class="content-title">2. 服务态度</text>
+        <text class="content-text">- 保持微笑，礼貌待人</text>
+        <text class="content-text">- 耐心倾听患者的问题</text>
+        <text class="content-text">- 使用文明用语</text>
+      </view>
+      <view class="content-item">
+        <text class="content-title">3. 服务内容</text>
+        <text class="content-text">- 引导患者到相应科室</text>
+        <text class="content-text">- 协助患者使用自助设备</text>
+        <text class="content-text">- 解答患者的一般问题</text>
+      </view>
+    </view>
+
+    <!-- 应急处理 -->
+    <view wx:if="{{currentTab == 'emergency'}}" class="content-card">
+      <text class="subtitle">应急处理指南</text>
+      <view class="content-item">
+        <text class="content-title">1. 突发疾病</text>
+        <text class="content-text">- 立即呼叫医护人员</text>
+        <text class="content-text">- 协助患者保持舒适体位</text>
+        <text class="content-text">- 安抚患者情绪</text>
+      </view>
+      <view class="content-item">
+        <text class="content-title">2. 意外受伤</text>
+        <text class="content-text">- 简单包扎止血</text>
+        <text class="content-text">- 引导到急诊室</text>
+        <text class="content-text">- 保留相关证据</text>
+      </view>
+      <view class="content-item">
+        <text class="content-title">3. 纠纷处理</text>
+        <text class="content-text">- 保持冷静，不要激化矛盾</text>
+        <text class="content-text">- 及时报告相关部门</text>
+        <text class="content-text">- 做好记录</text>
+      </view>
+    </view>
+
+    <!-- 沟通技巧 -->
+    <view wx:if="{{currentTab == 'communication'}}" class="content-card">
+      <text class="subtitle">沟通技巧</text>
+      <view class="content-item">
+        <text class="content-title">1. 倾听技巧</text>
+        <text class="content-text">- 保持目光接触</text>
+        <text class="content-text">- 不要打断患者讲话</text>
+        <text class="content-text">- 点头表示理解</text>
+      </view>
+      <view class="content-item">
+        <text class="content-title">2. 表达技巧</text>
+        <text class="content-text">- 使用简单易懂的语言</text>
+        <text class="content-text">- 语速适中，声音清晰</text>
+        <text class="content-text">- 确认患者理解</text>
+      </view>
+      <view class="content-item">
+        <text class="content-title">3. 特殊情况</text>
+        <text class="content-text">- 对老年人要有耐心</text>
+        <text class="content-text">- 对儿童要亲切友好</text>
+        <text class="content-text">- 尊重患者隐私</text>
+      </view>
+    </view>
+  </view>
+</view>

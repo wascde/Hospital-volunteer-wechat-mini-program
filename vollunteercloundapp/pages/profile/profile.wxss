@@ -1,0 +1,122 @@
+/* pages/profile/profile.wxss */
+.container {
+  padding: 0;
+}
+
+.user-section {
+  background-color: #1A73E8;
+  padding: 40rpx 20rpx;
+  color: #fff;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.5);
+}
+
+.avatar image {
+  width: 100%;
+  height: 100%;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  display: block;
+}
+
+.user-id {
+  font-size: 26rpx;
+  opacity: 0.8;
+  display: block;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  padding: 30rpx 0;
+  margin-bottom: 20rpx;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #1A73E8;
+  display: block;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 10rpx;
+  display: block;
+}
+
+.menu-section {
+  background-color: #fff;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 25rpx 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  font-size: 36rpx;
+  margin-right: 20rpx;
+}
+
+.menu-text {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.menu-arrow {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.logout-section {
+  margin-top: 40rpx;
+  padding: 0 20rpx;
+}
+
+.logout-btn {
+  background-color: #fff;
+  color: #ff4d4f;
+  border: 1rpx solid #ff4d4f;
+  border-radius: 8rpx;
+  width: 100%;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.logout-btn:hover {
+  background-color: #fff1f0;
+}

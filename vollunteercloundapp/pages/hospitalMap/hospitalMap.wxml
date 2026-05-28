@@ -1,0 +1,84 @@
+<view class="container">
+  <!-- 楼层选择器 -->
+  <view class="floor-selector">
+    <view
+      class="floor-tab {{currentFloor == item.id ? 'active' : ''}}"
+      wx:for="{{floors}}"
+      wx:key="id"
+      bindtap="onFloorTap"
+      data-floor-id="{{item.id}}"
+    >
+      <text class="floor-tab-name">{{item.name}}</text>
+      <text class="floor-tab-desc" wx:if="{{currentFloor == item.id}}">{{item.description}}</text>
+    </view>
+  </view>
+
+  <!-- 楼层平面图 -->
+  <view class="floor-plan">
+    <!-- 楼层标题 -->
+    <view class="floor-header">
+      <text class="floor-title">{{currentFloorData.name}} 平面图</text>
+      <text class="floor-desc">{{currentFloorData.description}}</text>
+    </view>
+
+    <!-- 平面图区域 -->
+    <view class="map-area">
+      <!-- 背景网格（纯 CSS 实现） -->
+      <view class="map-grid">
+        <!-- 走廊/过道 -->
+        <view class="corridor-h"></view>
+        <view class="corridor-v"></view>
+
+        <!-- 房间块 -->
+        <view
+          class="room-block {{selectedRoom && selectedRoom.id == item.id ? 'selected' : ''}}"
+          wx:for="{{rooms}}"
+          wx:key="id"
+          style="left: {{item.x}}%; top: {{item.y}}%; width: {{item.width}}%; height: {{item.height}}%; background-color: {{item.bgColor}}; border-color: {{item.color}};"
+          bindtap="onRoomTap"
+          data-room-id="{{item.id}}"
+        >
+          <view class="room-name">{{item.name}}</view>
+          <view class="room-type-tag" style="background-color: {{item.color}};">{{item.typeLabel}}</view>
+        </view>
+      </view>
+
+      <!-- 操作提示 -->
+      <view class="map-tip">💡 点击房间查看详细信息</view>
+    </view>
+
+    <!-- 图例 -->
+    <view class="legend">
+      <text class="legend-title">图例</text>
+      <view class="legend-items">
+        <view class="legend-item" wx:for="{{roomTypes}}" wx:key="index">
+          <view class="legend-dot" style="background-color: {{item.color}};"></view>
+          <text class="legend-label">{{item.label}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 房间详情弹窗 -->
+  <view class="detail-overlay {{showDetail ? 'show' : ''}}" bindtap="closeDetail">
+    <view class="detail-card" catchtap="noop">
+      <view class="detail-header" style="border-left-color: {{selectedRoom.color}};">
+        <text class="detail-room-name">{{selectedRoom.name}}</text>
+        <view class="detail-type-badge" style="background-color: {{selectedRoom.color}};">
+          {{selectedRoom.typeLabel}}
+        </view>
+      </view>
+      <view class="detail-body">
+        <view class="detail-info">
+          <text class="detail-label">所在楼层</text>
+          <text class="detail-value">{{currentFloorData.name}}</text>
+        </view>
+        <view class="detail-info">
+          <text class="detail-label">功能介绍</text>
+          <text class="detail-value">{{selectedRoom.desc}}</text>
+        </view>
+      </view>
+      <view class="detail-close" bindtap="closeDetail">知道了</view>
+    </view>
+  </view>
+</view>

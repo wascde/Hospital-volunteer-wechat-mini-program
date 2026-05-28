@@ -1,0 +1,56 @@
+<!-- pages/profile/profile.wxml -->
+<view class="container">
+  <view class="user-section">
+    <view class="user-info">
+      <view class="avatar">
+        <image src="/images/avatar.png" mode="aspectFill"></image>
+      </view>
+      <view class="user-details">
+        <text class="user-name">志愿者</text>
+        <text class="user-id">志愿者ID：VOL123456</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="stats-section">
+    <view class="stat-item">
+      <text class="stat-value">48</text>
+      <text class="stat-label">服务时长(小时)</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">126</text>
+      <text class="stat-label">服务次数</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">5.0</text>
+      <text class="stat-label">服务评分</text>
+    </view>
+  </view>
+
+  <view class="menu-section">
+    <navigator url="" class="menu-item">
+      <text class="menu-icon">📋</text>
+      <text class="menu-text">服务记录</text>
+      <text class="menu-arrow">></text>
+    </navigator>
+    <navigator url="" class="menu-item">
+      <text class="menu-icon">📚</text>
+      <text class="menu-text">培训证书</text>
+      <text class="menu-arrow">></text>
+    </navigator>
+    <navigator url="" class="menu-item">
+      <text class="menu-icon">⚙️</text>
+      <text class="menu-text">设置</text>
+      <text class="menu-arrow">></text>
+    </navigator>
+    <navigator url="" class="menu-item">
+      <text class="menu-icon">ℹ️</text>
+      <text class="menu-text">关于我们</text>
+      <text class="menu-arrow">></text>
+    </navigator>
+  </view>
+
+  <view class="logout-section">
+    <button class="logout-btn" bindtap="logout">退出登录</button>
+  </view>
+</view>

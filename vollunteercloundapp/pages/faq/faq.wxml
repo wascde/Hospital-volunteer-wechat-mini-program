@@ -1,0 +1,53 @@
+<!-- pages/faq/faq.wxml -->
+<view class="container">
+  <view class="card">
+    <text class="title">常见问题</text>
+    <view class="search-section">
+      <input 
+        class="input" 
+        placeholder="请输入问题关键词" 
+        bindinput="onInput"
+        value="{{searchText}}"
+      />
+      <button class="button" bindtap="searchFaq">搜索</button>
+    </view>
+  </view>
+
+  <view class="category-section">
+    <text class="subtitle">问题分类</text>
+    <view class="categories-list">
+      <view 
+        class="category-item {{currentCategory == item.id ? 'active' : ''}}" 
+        wx:for="{{categories}}" 
+        wx:key="id"
+        bindtap="selectCategory"
+        data-category-id="{{item.id}}"
+      >
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+
+  <view class="faq-section">
+    <text class="title">问题列表</text>
+    <view class="faq-list">
+      <view 
+        class="faq-item" 
+        wx:for="{{filteredFaqs}}" 
+        wx:key="id"
+        bindtap="toggleFaq"
+        data-faq-id="{{item.id}}"
+      >
+        <view class="faq-header">
+          <text class="faq-question">{{item.question}}</text>
+          <text class="faq-icon">{{expandedFaqs[item.id] ? '▼' : '▶'}}</text>
+        </view>
+        <view 
+          class="faq-answer {{expandedFaqs[item.id] ? 'expanded' : ''}}"
+        >
+          {{item.answer}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

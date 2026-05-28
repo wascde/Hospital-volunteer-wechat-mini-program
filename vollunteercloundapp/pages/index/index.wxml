@@ -1,0 +1,36 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <view class="card">
+    <text class="title">欢迎使用医院志愿者助手</text>
+    <text>这里是医院志愿者的专属工具，帮助您快速解答患者的问题。</text>
+  </view>
+
+  <view class="quick-actions">
+    <navigator url="/pages/deptSearch/deptSearch" class="action-item">
+      <view class="action-icon">🔍</view>
+      <view class="action-text">科室查询</view>
+    </navigator>
+    
+    <navigator url="/pages/hospitalMap/hospitalMap" class="action-item">
+      <view class="action-icon">🗺️</view>
+      <view class="action-text">医院地图</view>
+    </navigator>
+    
+    <navigator url="/pages/volunteerGuide/volunteerGuide" class="action-item">
+      <view class="action-icon">📚</view>
+      <view class="action-text">服务指南</view>
+    </navigator>
+    
+    <navigator url="/pages/faq/faq" class="action-item">
+      <view class="action-icon">❓</view>
+      <view class="action-text">常见问题</view>
+    </navigator>
+  </view>
+
+  <view class="tips">
+    <text class="tips-title">今日提示</text>
+    <text>1. 请主动佩戴志愿者标识</text>
+    <text>2. 保持微笑和耐心</text>
+    <text>3. 遇到问题及时寻求帮助</text>
+  </view>
+</view>
